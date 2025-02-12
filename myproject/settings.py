@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todoapp'
+    'todoapp',
+    'media'
 ]
 
 MIDDLEWARE = [
@@ -126,4 +127,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'task_list'
 # LOGOUT_REDIRECT_URL = 'index'
+
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = BASE_DIR 
 
