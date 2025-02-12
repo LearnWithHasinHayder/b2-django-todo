@@ -32,7 +32,10 @@ def register(request):
     if request.method == "POST":
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            user = form.save(commit=False)
+            # set staff status to True
+            user.is_staff = True
+            user.save()
             login(request, user)
             return redirect("task_list")
             # return redirect('login')
