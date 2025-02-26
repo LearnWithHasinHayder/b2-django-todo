@@ -1,0 +1,31 @@
+{% extends 'authcheck/base.html' %}
+
+{% block title %}Hasin's Special Page{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header bg-success text-white">
+        <h2>Welcome Hasin!</h2>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-info">
+            <p class="mb-0">This is a special page only accessible by user 'hasin'.</p>
+        </div>
+        
+        <div class="mt-4">
+            <h4>Your Account Information:</h4>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Username:</strong> {{ request.user.username }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Email:</strong> {{ request.user.email }}
+                </li>
+                <li class="list-group-item">
+                    <strong>Last Login:</strong> {{ request.user.last_login }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
